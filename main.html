@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title> BSU Bank </title>
 <style>
-/* body {font-family: Arial, Helvetica, sans-serif;}*/
-
+ body {
+  font-family: 'Times New Roman', Times, serif;
+  /* background-image: url("dog.png"); */
+  background-repeat:no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-position-y: 58px;
+  background-color: rgb(188, 188, 188);
+}
+.logo{
+  height: 50px;
+  width: 50px;
+  
+}
+ form {
+  border: 3px;
+  float:left;
+}
 input[type=text], input[type=password]
 {
   width: 100%;
@@ -33,22 +50,39 @@ button:hover
   padding: 10px 18px;
   background-color: #cd3a3a;
 }
-screen and (max-width: 300px)
-{
-  span.psw
-  {
+.container {
+  padding: 16px;
+  max-width: 300px;
+  margin: left;
+  
+}
+.spaceheader{
+  border: 34px solid #4b4b4b;
+}
+.space {
+  margin: left;
+  max-width: 44px;
+  height: 40px;
+  border: 40px solid;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
      display: block;
      float: none;
   }
-  .cancelbtn
-  {
+  .cancelbtn {
      width: 100%;
   }
 }
 </style>
 </head>
 <body>
-<h2>Bank Website</h2>
+  <div class="spaceheader"></div>
+<h2 style=" text-align:center" class= "container">Login</h2>
 
 <form>
   <div class="container">
