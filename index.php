@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <?php
+        include ('connection.php');
+    ?>
         <title> BSU Bank </title>
         <style>
             body
