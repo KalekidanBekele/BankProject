@@ -8,7 +8,7 @@
     {
         while($row = $result->fetch_assoc() )
         {
-            echo $row["email"]."<br>";
+            echo $row["uname"]."<br>";
         } 
     }
     else
