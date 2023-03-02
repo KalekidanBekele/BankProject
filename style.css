@@ -5,6 +5,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.backimg {
+    background-image: url('img\bsu-pattern-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
 body {
     background-color: #435165;
 }
@@ -135,9 +141,10 @@ body.loggedin {
 
 .ContainUserData
 {
-    width: 65%;
-    height: 80px;
-    padding: 8px;
+    width: 55%;
+    height: 320px;
+    padding: 28px;
     background-color: rgb(211, 211, 211);
-    margin: 0 12% auto;
+    margin: 0 22% auto;
+    position: center;
 }

@@ -1,8 +1,5 @@
 <?php
-session_start();
-
-
-
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,6 +21,7 @@ session_start();
 			<h3>Welcome back!</h3>            
 		</div>
         <link href="stylebank.css" rel="stylesheet" type= "text/css">
+        <div class= "ContainUserData">
         <div class="flex">
         <div class="element-center">
     
@@ -41,6 +39,7 @@ session_start();
             <button id="btnWithdraw">Withdraw</button>
     </div>
   
+</div>
 </div>
 </div>
     <script type="text/javascript" src="userbanking.js"></script>
