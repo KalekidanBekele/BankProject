@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,35 +25,25 @@ session_start();
 		</div>
         <link href="stylebank.css" rel="stylesheet" type= "text/css">
         <div class="flex">
-  <div class="element-center">
+        <div class="element-center">
     
-    <div id="acctBalance">
-        
-            <span class="wrap"></span>
-        </a>
-        <h1>
-            Total Balance
-        </h1>
-        <label id="acctBalanceLbl"></label>
+        <div id="acctBalance"> <span class="wrap"></span>
+            </a>
+                <h1> Total Balance </h1>
+                    <label id="acctBalanceLbl"></label>
+        </div>
+
+        <div id="inputs">
+        <h2> Deposit </h2> <input type="text" id="userDeposit" required>
+            <button id="btnDeposit">Deposit</button>
+
+        <h2> Withdraw </h2> <input type="text" id="userWithdraw" required>
+            <button id="btnWithdraw">Withdraw</button>
     </div>
-
-    <div id="inputs">
-        <h2>
-            Deposit
-        </h2>
-        <input type="text" id="userDeposit" required>
-        <button id="btnDeposit">Deposit</button>
-
-        <h2>
-            Withdraw
-        </h2>
-        <input type="text" id="userWithdraw" required>
-        <button id="btnWithdraw">Withdraw</button>
-    </div>
-  </div>
-  </div>
-
+  
+</div>
+</div>
     <script type="text/javascript" src="userbanking.js"></script>
 </body>
-	</body>
+</body>
 </html>
