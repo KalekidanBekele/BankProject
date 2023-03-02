@@ -6,6 +6,8 @@
 
          $get_data = "SELECT * FROM `data`;";
         $query_data = mysqli_query($conn, $get_data);
+        // $get_data = "SELECT * FROM `data` WHERE email LIKE '%$uname%';";
+        //$result = $conn->query($get_data);
 
         if  ($query_data->num_rows > 0)
         {

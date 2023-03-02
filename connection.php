@@ -1,14 +1,15 @@
 <?php
-$dbhost = "localhost";
-$dbuser = "root";
-$password = "";
-$db = "bankproject";
+  $dbhost = "localhost";
+  $dbuser = "root";
+  $password = "";
+  $db = "bankproject";
 
-// Create connection
-$conn = new mysqli($dbhost, $dbuser, $password, $db);
+  // Create connection
+  $conn = new mysqli($dbhost, $dbuser, $password, $db);
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
 ?>
