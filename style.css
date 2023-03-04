@@ -6,12 +6,16 @@
     -moz-osx-font-smoothing: grayscale;
 }
 .backimg {
-    background-image: url('img\bsu-pattern-thumbnail.jpg');
+    background-image: url('img/bsu-pattern-thumbnail.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
   }
 body {
+    background-image: url('img/bsu-pattern-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     background-color: #435165;
 }
 .login {
