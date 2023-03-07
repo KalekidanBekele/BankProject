@@ -16,16 +16,3 @@
 
     $conn->close();
 ?>
-
-<!DOCTYPE html>
-<html>
-    <body>
-    <script type="text/javascript">
-        var fn = "<?php echo"$fName"?>";
-        var fn = "<?php echo"$lName"?>";
-        var fn = "<?php echo"$email"?>";
-        var fn = "<?php echo"$bal"?>";
-        document.write(x);
-    </script>
-    </body>
-</html>
