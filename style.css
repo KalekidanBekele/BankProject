@@ -148,7 +148,7 @@ body.loggedin {
     width: 55%;
     height: fit-content;
     padding: 28px;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(255, 255, 255);
     margin: 0 22% auto;
     position: center;
 }
