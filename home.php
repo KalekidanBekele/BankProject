@@ -20,7 +20,7 @@
 			<h2>Home Page</h2>
 			<h3>Welcome back!</h3>            
 		</div>
-        <link href="stylebank.css" rel="stylesheet" type= "text/css">
+        <link href="bankstyle.css" rel="stylesheet" type= "text/css">
         <div class= "ContainUserData">
         <div class="flex">
         <div class="element-center">

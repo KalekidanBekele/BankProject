@@ -142,7 +142,7 @@ body.loggedin {
 .ContainUserData
 {
     width: 55%;
-    height: 320px;
+    height: fit-content;
     padding: 28px;
     background-color: rgb(211, 211, 211);
     margin: 0 22% auto;
