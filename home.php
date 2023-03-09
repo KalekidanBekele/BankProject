@@ -27,7 +27,7 @@
     
         <div id="acctBalance"> <span class="wrap"></span>
             </a>
-                <h1> Total Balance </h1>
+                <h1> Balance </h1>
                     <label id="acctBalanceLbl"></label>
         </div>
 

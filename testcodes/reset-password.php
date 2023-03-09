@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: index.html");
     exit;
 }
  
@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE 'data' SET password = ? WHERE email = ?";
+        $sql = "UPDATE 'data' SET password = ? WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt)){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: login.php");
+                header("location: index.html");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="home.php">Cancel</a>
             </div>
         </form>
     </div>    

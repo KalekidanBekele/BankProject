@@ -2,7 +2,7 @@
 
 body {
   
-  background-color: #484848;
+  background-color: #000000;
   font-family: 'Lato', sans-serif;
   padding: 1em;
   line-height: 1.5;
@@ -80,7 +80,7 @@ input {
 
 button {
     color: white;
-    background: #508abc;
+    background: #cd8810;
     border: solid 1px;
     border-color: rgba(0, 0, 0, .1);
     cursor: pointer;

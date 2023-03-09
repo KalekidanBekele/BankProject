@@ -1,3 +1,5 @@
+
+
 const acctBalanceLbl = document.getElementById("acctBalanceLbl");
 const deposits = [];
 const withdrawals = [];
