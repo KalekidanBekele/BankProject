@@ -9,10 +9,11 @@
     }  
     else
     {  
-        echo '<script>alert("Login failed. Invalid username or password.")</script>';
         //sleep(2);
-        header("location: index.html");  
-    }
+  header("location: index.html");  
+  echo '<script>alert("Login failed. Invalid username or password.")</script>';
+
+    } 
     
     sqlsrv_close($conn);
 ?>
