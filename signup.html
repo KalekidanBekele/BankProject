@@ -15,18 +15,18 @@
 		</div>
 	</nav>
     
-  <form>
+  <form action="transition.php" onsubmit = "return validation()" method="post">
     <div class="login">
       <h1>Sign Up</h1>
       <center><p><b>Please fill in this form to create an account.</b></p></center>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Email" name="email" required>
+      <input type="text" placeholder="Email" name="email" id="username"required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Create Password" name="psw" required>
+      <input type="password" placeholder="Create Password" name="psw" id="password" required>
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat"  id="pass-repeat" required>
     
     <div class="clearfix">
         <button type="submit" >Sign Up</button>
