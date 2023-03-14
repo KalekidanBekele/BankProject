@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <title>Login </title>
+    <link rel = "stylesheet" type = "text/css" href = "signup.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <script src="https://kit.fontawesome.com/9a4c809e35.js" crossorigin="anonymous"></script>
+
+<body>
+    <nav class="navtop">
+	    <div>
+			<a href="index.html"><i class="fa-regular fa-user"></i>Log In</a>
+            <b>--------------------------------------------------------------------------------------------------------- </b>
+            <a href="signup.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a>
+				
+		</div>
+	</nav>
+    
+  <form>
+    <div class="login">
+      <h1>Sign Up</h1>
+      <center><p><b>Please fill in this form to create an account.</b></p></center>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Create Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    
+    <div class="clearfix">
+        <button type="submit" >Sign Up</button>
+    </div>
+    </div>
+  </form>
+<script>
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

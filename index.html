@@ -4,7 +4,16 @@
         <title>Login </title>
         <link rel = "stylesheet" type = "text/css" href = "style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <script src="https://kit.fontawesome.com/9a4c809e35.js" crossorigin="anonymous"></script>
     <body>
+		<nav class="navtop">
+			<div>
+				<a href="index.html"><i class="fa-regular fa-user"></i>Log In</a>
+                <b>--------------------------------------------------------------------------------------------------------------------- </b>
+                <a href="signup.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a>
+				
+			</div>
+		</nav>
         <div class="login">
             <h1>Login</h1>
 
@@ -20,9 +29,19 @@
                 <span action="reset-password.php" class="password">Forgot <a href="#">Password?</a></span>
             </div>
         </form>
+        <script>
+            const username = document.getElementById('username')
+            const password = document.getElementById('password')
+            const fs = require('fs')
 
-            <script >
-                
-            </script>
+            fs.writeFile('username.txt',username, (err) =>
+            {
+                if (err) throw err;
+            })
+            fs.writeFile('password.txt',password, (err) =>
+            {
+                if (err) throw err;
+            })
+        </script>
     </body>
 </html>

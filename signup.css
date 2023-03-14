@@ -14,17 +14,19 @@ input[type=text], input[type=password] {
     background: #f1f1f1;
   }
   button {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #fcab1b;
+    color: #121212;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 0px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 1;
   }
   button:hover {
-    opacity:1;
+    opacity:6;
+    background-color: #cd8810;
   }
   @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
@@ -59,17 +61,19 @@ body {
     background-color: #121212;
 }
 .login {
-    width: 400px;
-    background-color: #df9009;
+    width: 500px;
+    background-color: #FAA718;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
+    margin: 50px auto;
+    height: 530px;
+    padding: 10px;
 }
 .login h1 {
     text-align: center;
     color: #121212;
     font-size: 24px;
     padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+    border-bottom: 1px solid #121212;
 }
 .login form {
     display: flex;
@@ -90,7 +94,7 @@ body {
 .login form input[type="password"], .login form input[type="text"] {
     width: 310px;
     height: 50px;
-    border: 1px solid #dee0e4;
+    border: 1px solid #121212;
     margin-bottom: 20px;
     padding: 0 15px;
 }
@@ -98,15 +102,16 @@ body {
     width: 100%;
     padding: 15px;
    margin-top: 20px;
-    background-color: #df9009;
+    background-color: #FCAB1B;
     border: 0;
     cursor: pointer;
     font-weight: bold;
     color: #121212;
+    transition: background-color 0.2s;
 }
 .login form input[type="submit"]:hover {
-  opacity:6;
   background-color: #cd8810;
+    transition: background-color 0.2s;
 }
 
 
@@ -163,8 +168,8 @@ body.loggedin {
 }
 .content h2 {
 	margin: 0;
-	padding: 30px 0;
-	font-size: 30px;
+	padding: 25px 0;
+	font-size: 22px;
 	border-bottom: 1px solid #e0e0e3;
 	color: #121212;
 }
