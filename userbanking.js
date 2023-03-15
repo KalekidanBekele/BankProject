@@ -1,6 +1,6 @@
 
 
-const acctBalanceLbl = document.getElementById("acctBalanceLbl");
+const acctBalanceLbl = document.getElementById("balance");
 const deposits = [];
 const withdrawals = [];
 let totalBalance = 25;//here is where to get the balance from the sql db

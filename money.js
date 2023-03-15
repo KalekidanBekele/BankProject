@@ -19,8 +19,8 @@ function sendMoney(){
  
        // transaction history 
        var createPTag = document.createElement("li");
-       var textNode = document.createTextNode(`Rs ${enterAmount} is sent from the sender with Email-id ${enterSName}@email.com
-  to recepient with Email-id ${enterName}@email.com on ${Date()}.`);
+       var textNode = document.createTextNode(`Rs ${enterAmount} is sent from the sender with the username of ${enterSName}
+  to recepient with the username of ${enterName} on ${Date()}.`);
        createPTag.appendChild(textNode);
        var element = document.getElementById("transaction-history-body");
        element.insertBefore(createPTag, element.firstChild);
