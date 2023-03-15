@@ -14,7 +14,7 @@ input[type=text], input[type=password] {
     background: #f1f1f1;
   }
   button {
-    background-color: #04AA6D;
+    background-color: #cd8810;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -60,7 +60,7 @@ body {
 }
 .login {
     width: 400px;
-    background-color: #df9009;
+    background-color: #FCAB1B;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
 }
@@ -69,7 +69,7 @@ body {
     color: #121212;
     font-size: 24px;
     padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+    border-bottom: 1px solid #121212;
 }
 .login form {
     display: flex;
@@ -98,7 +98,7 @@ body {
     width: 100%;
     padding: 15px;
    margin-top: 20px;
-    background-color: #df9009;
+    background-color: #fcab1b;
     border: 0;
     cursor: pointer;
     font-weight: bold;
@@ -153,6 +153,7 @@ body {
 }
 .navtop div a:hover {
 	color: #eaebed;
+  opacity: .82;
 }
 body.loggedin {
 	background-color: #f3f4f7;
@@ -196,4 +197,32 @@ body.loggedin {
     background-color: rgb(255, 255, 255);
     margin: 0 22% auto;
     position: center;
+}
+.ContainProfile
+{
+    width: 55%;
+    height: fit-content;
+    padding: 28px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 22% auto;
+    position: right;
+}
+.flexborder {
+  background: #F9A618;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items:center;
+  margin: 0 auto;
+  border-radius:5px;
+}
+.element-right {
+  display: flex;
+  flex-direction:column;
+  justify-content: right;
+}
+.element-left {
+  display: flex;
+  flex-direction:column;
+  justify-content: left;
 }

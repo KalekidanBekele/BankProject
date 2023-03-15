@@ -5,7 +5,6 @@
     {  
         //echo "<h1><center> Login successful </center></h1>";
         header('Location: home.html');
-        echo "<h3><center> Hello, $username </center></h3>";
     }  
     else
     {  
