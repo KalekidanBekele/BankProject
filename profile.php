@@ -1,5 +1,5 @@
 <?php
-    include('connection.php');  
+    include('authenicate.php');  
   
 	$username = $_POST['username'];  
     $password = $_POST['password'];

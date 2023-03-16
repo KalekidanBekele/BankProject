@@ -1,9 +1,17 @@
 <?php
     include('authenicate.php');
+    include('userdata.php');
     
     if($count == 1)
     {  
-        //echo "<h1><center> Login successful </center></h1>";
+        if(isset($_POST['username']))
+        {
+        $data=$_POST['username'];
+        $fp = fopen('userdata.txt', 'w');
+        fwrite($fp, $data);
+        fclose($fp);
+        }
+
         header('Location: home.html');
     }  
     else

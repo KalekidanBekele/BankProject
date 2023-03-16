@@ -1,8 +1,6 @@
 <?php
-    include('connection.php');
+    include('authenicate.php');
 
-    $username = "sample@sample.com";
-    $password = "abcd";
     $fname = "";
     $lname = "";
     $bal = "";
