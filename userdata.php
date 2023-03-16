@@ -1,7 +1,7 @@
 <?php
     include('connection.php');
 
-    $username = "bekelek0517@students.bowiestate.edu";
+    $username = "sample@sample.com";
     $password = "abcd";
     $fname = "";
     $lname = "";

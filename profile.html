@@ -25,30 +25,23 @@
             <div class ="ContainProfile">
 			<div class ="flexborder">
 			<div class ="element-right">
+			<form action="profile.php" onsubmit = "return validation()" method="post">
 				<h3> First Name </h3> <input type="text" placeholder="New First Name" id="fname" name="fname" required>
-                    <button type="submit" name="submit">Change</button>
                 <h3> Last Name </h3> <input type="text" placeholder="New Last Name" id="lname" name="lname" required>
-                    <button type="submit" name="submit">Change</button>
-                <h3> Email </h3> <input type="text" placeholder="New Email" id="username" name="username"required>
-                    <button type="submit" name="submit">Change</button>
                 <h3> Password </h3> <input type="password" placeholder="New Password" id="password" name="password"required>
                     <button type="submit" name="submit">Change</button>
+			</form>
 			</div>
 			</div>
 			<div class ="flexborder">
 			<div class ="element-left">
+			<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
 
 				<h3> First Name </h3>
 				<h3> Last Name </h3>
 				<h3> Email </h3>
 				<h3> Password </h3>
-				<h3 id= "acctype"> Account Type</h3>
-						<select>
-							<option value="black">----</option>
-							<option value="black">Saving</option>
-							<option value="red">Checking</option>
-							<script src= "switch.js"></script>
-
+				
 			</div>
 			</div>
 			</div>
