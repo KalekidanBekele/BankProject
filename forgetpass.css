@@ -142,6 +142,8 @@ body {
 	text-decoration: none;
 	color: #c1c4c8;
 	font-weight: bold;
+  flex-wrap:wrap;
+  justify-content: center;
 }
 .navtop div b {
     padding: 20px;

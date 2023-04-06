@@ -14,39 +14,36 @@
 				<a href="home.html"><i class="fa-solid fa-house-user"></i><u>Home</u></a>
 				<a href="transfer.html"><i class="fa-solid fa-money-bill-transfer"></i>Transfer</a>
 				<a href = "transaction.html"><i class="fa-solid fa-money-check-dollar"></i>Transactions</a>
-				<b> ____--------------------------------___ </b>
 				<a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
-				<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				<a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
 		<div class="content">
 			<h2>Home Page</h2>
-			<h3>Welcome, User!</h3>            
+			<div>
+				<h2> <object data="username.txt"></object></h2>
+			</div>
 		</div>
         <link href="bankstyle.css" rel="stylesheet" type= "text/css">
         <div class= "ContainUserData">
-        <div class="flex">
-        <div class="element-center">
+			<div class="flex">
+				<div class="element-center">
+					
+					<div id="acctBalance"> <span class="wrap"></span>
+						</a>
+							<center><h1> Balance  </h1> <label id="acctBalanceLbl"></label></center>
+					</div>
+
+					<div id="inputs">
+					<h2> Deposit </h2> <input type="text" id="userDeposit" required>
+						<button id="btnDeposit">Deposit</button>
+
+					<h2> Withdraw </h2> <input type="text" id="userWithdraw" required>
+						<button id="btnWithdraw">Withdraw</button>
+					</div>
 		
-        
-		<div id="acctBalance"> <span class="wrap"></span>
-            </a>
-                <center><h1> Balance  </h1> <label id="acctBalanceLbl"></label></center>
-        </div>
-
-        <div id="inputs">
-        <h2> Deposit </h2> <input type="text" id="userDeposit" required>
-            <button id="btnDeposit">Deposit</button>
-
-        <h2> Withdraw </h2> <input type="text" id="userWithdraw" required>
-            <button id="btnWithdraw">Withdraw</button>
-    </div>
-  
-</div>
-</div>
-</div>
-    <script type="text/javascript" src="userbanking.js"></script>
-	
-</body>
-</body>
+				</div>
+			</div>
+		</div>
+			<script type="text/javascript" src="./routes/userbanking.js"></script>
 </html>

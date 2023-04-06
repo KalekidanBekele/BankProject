@@ -8,17 +8,22 @@
 <body>
     <nav class="navtop">
 	    <div>
-			<a href="index.html"><i class="fa-regular fa-user"></i>Log In</a>
-            <b>-------------------------------------------------------------------------------------------------------------- </b>
+			<a href="/"><i class="fa-regular fa-user"></i>Log In</a>
             <a href="signup.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a>
 				
 		</div>
 	</nav>
     
-  <form action="insertnew.php" method="post">
+  <form action="/signup" method="post">
     <div class="login">
       <h1>Sign Up</h1>
       <center><p><b>Please fill in this form to create an account.</b></p></center>
+      <label for="firstname"><b>First Name</b></label>
+      <input type="text" placeholder="Your First Name" name="firstname" id="firstname"required>
+      
+      <label for="lastname"><b>Last Name</b></label>
+      <input type="text" placeholder="Your Last Name" name="lastname" id="lastname"required>
+
       <label for="username"><b>Email</b></label>
       <input type="text" placeholder="Email" name="username" id="username"required>
 
@@ -26,7 +31,7 @@
       <input type="password" placeholder="Create Password" name="password" id="password" required>
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="pass-repeat"  id="pass-repeat" required>
+      <input type="password" placeholder="Repeat Password" name="repeatpass"  id="repeatpass" required>
     
     <div class="clearfix">
         <button type="submit" name="submit" >Sign Up</button>
