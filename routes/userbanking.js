@@ -1,12 +1,8 @@
-fs.readFile('balance.txt', function (err, data) {
-    balance = data.toString();
- });
- console.log(balance);
-
 const acctBalanceLbl = document.getElementById("balance");
 const deposits = [];
 const withdrawals = [];
-let totalBalance = 250;//here is where to get the balance from the sql db
+let totalBalance = 250;
+console.log(totalBalance);
 const userDeposit = document.getElementById("userDeposit");
 const btnDeposit = document.getElementById("btnDeposit");
 const userWithdraw = document.getElementById("userWithdraw");

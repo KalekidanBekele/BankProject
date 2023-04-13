@@ -1,6 +1,6 @@
-// http://localhost:3000/ is the website locally
-
-const conn = require('./connection');
+// http://localhost:3000/index.html is the website locally
+const readline = require('readline')
+const conn = require('./routes/connection');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -36,9 +36,27 @@ app.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.username = username;
 
+
+                let user = { 
+                    id: results[0]['id'],
+                    fname: results[0]['firstNAME'],
+                    lname: results[0]['lastNAME'], 
+                    username: results[0]['username'],
+                    password: results[0]['password'],
+                    balance: results[0]['balance'] 
+                };
+                 
+                let data = JSON.stringify(user, null, 2);
+                
+                fs.writeFile('./user_data/user.json', data, (err) => {
+                    if (err) throw err;
+                    console.log('Data written to file');
+                });
+                //
+                //
                 async function example(input) {
                     try {
-                      await fs.writeFile('username.txt', input);
+                      await fs.writeFile('./user_data/username.txt', input);
                     } catch (err) {
                       console.log(err);
                     }
@@ -51,13 +69,13 @@ app.post('/auth', function(request, response) {
 
                 async function example2(input) {
                     try {
-                      await fs.writeFile('balance.txt', input);
+                      await fs.writeFile('./user_data/balance.txt', input);
                     } catch (err) {
                       console.log(err);
                     }
                   }
                   example2(strbal);
-                
+
 				response.redirect('home.html');
                 
 			} else {
@@ -76,18 +94,15 @@ app.post('/auth', function(request, response) {
 console.log('outside: '+counter);
 
 app.get('/home', function(request, response) {
-if (request.session.loggedin) {
-    username = request.session.username;
-    
-    response.send(username);
-    console.log(username);
-
-    res.render(__dirname + "/home.html", {username:username});
-    
-} else {
-    response.send('Please login to view this page!');
-}
-response.end();
+	// If the user is loggedin
+	if (request.session.loggedin) {
+		// Output username
+		response.send('Welcome back, ' + request.session.username + '!');
+	} else {
+		// Not logged in
+		response.send('Please login to view this page!');
+	}
+	response.end();
 });
 
 app.post("/signup", function(request, response){
@@ -194,25 +209,121 @@ app.post("/forgotpass", function(request, response){
         }
 });
 
-app.post("/bal", function(req, res){
+app.post("/bal", function(request, response){    
+    if (request.session.loggedin) {
+		// Output username
+		//response.send('Welcome back, ' + request.session.username + '!'); 
+        var updatedBalance;
 
-    var updatedBalance;
+        const formatter = new Intl.NumberFormat('en-US',
+        {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+        });
+           
+        conn.connection.query('SELECT `balance` FROM data WHERE username = ?', [request.session.username], function(error, results, fields) {
+			if (error) throw error;
+            console.log(results);
 
-    if (req.body.transactiontype === 'deposit') {
-        updatedBalance = parseFloat(req.body.balance) + parseFloat(req.body.amount);
+            const acctBalanceLbl = document.getElementById("balance");
+            const deposits = [];
+            const withdrawals = [];
+            let totalBalance = results;
+            const userDeposit = document.getElementById("userDeposit");
+            const btnDeposit = document.getElementById("btnDeposit");
+            const userWithdraw = document.getElementById("userWithdraw");
+            const btnWithdraw = document.getElementById("btnWithdraw");
+
+            var statement = results > 0;
+            console.log(statement);
+            var userbal = 'UPDATE `data` SET `balance`= ? WHERE `username` = ?';
+
+            btnDeposit.addEventListener('click', () =>
+            {
+                if (isNaN(userDeposit.value))
+                {
+                    alert("Please enter a number.");
+                    return userDeposit.value = '';
+                }
+                else
+                {
+                if (userDeposit.value < 0.01 || userDeposit.value > 10000)
+                {
+                    alert("You can only deposit between $0.01 and $10,000.")
+                    return userDeposit.value = '';
+                }
+                else
+                {
+                    deposits.push(Number(userDeposit.value));
+                    totalBalance += (Number(userDeposit.value));
+                    let totalBalanceFormatted = formatter.format(totalBalance);
+                    document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+                    
+                    if (conn.connection.query(userbal, [totalBalance, request.session.username]) == true )
+                    {
+                        console.log("successfully");
+                    }
+
+                    console.log("$" + userDeposit.value);
+                    return userDeposit.value = '';
+                }
+                }
+    
+            });
+            btnWithdraw.addEventListener('click', () =>
+            {
+                if (isNaN(userWithdraw.value))
+                {
+                    alert("Please enter a number.");
+                    return userWithdraw.value = '';
+                }
+                else
+                {
+                if (userWithdraw.value > totalBalance - 5)
+                {
+                    alert("Your total balance cannot drop below $5.");
+                    return userWithdraw.value = '';
+                }
+                else
+                {
+                    withdrawals.push(Number(userWithdraw.value));
+                    totalBalance -= (Number(userWithdraw.value));
+
+                    if (conn.connection.query(userbal, [totalBalance, request.session.username]) == true )
+                    {
+                        console.log("successfully");
+                    }
+                    let totalBalanceFormatted = formatter.format(totalBalance);
+                    document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+
+                    console.log("$" + userWithdraw.value);
+                    return userWithdraw.value = '';
+                }
+            }
+        });   
+        });
+    }
+
+    let totalBalanceFormatted = formatter.format(totalBalance);
+    document.getElementById("acctBalanceLbl").innerHTML = totalBalanceFormatted;
+
+     /*if (request.body.transactiontype === 'deposit') {
+        updatedBalance = parseFloat(request.body.balance) + parseFloat(request.body.amount);
     } else {
-        updatedBalance = parseFloat(req.body.balance) - parseFloat(req.body.amount);
+        updatedBalance = parseFloat(request.body.balance) - parseFloat(request.body.amount);
         if (updatedBalance < 0) updatedBalance = 0.0;
     }
 
-    var name = toUsername(req.body.firstname, req.body.lastname);
+    var name = toUsername(request.body.firstname, request.body.lastname);
 
     Bank.findOneAndUpdate({username: name}, {balance: updatedBalance}, {new: true}, function(err, data){
         if (err) throw err;
 
-        res.render('profile', {account: data});
-    })
+        response.render('profile', {account: data});
+    })*/
 
+	response.end();
 
 })
 

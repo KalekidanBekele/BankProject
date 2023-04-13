@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Home Page</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="./style/style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 		<script src="https://kit.fontawesome.com/9a4c809e35.js" crossorigin="anonymous"></script>
 	</head>
@@ -11,53 +11,52 @@
 		<nav class="navtop">
 			<div>
 				<h1>BSU Bank</h1>
-				<a href="home.html"><i class="fa-solid fa-house-user"></i><u>Home</u></a>
-				<a href="transfer.html"><i class="fa-solid fa-money-bill-transfer"></i>Transfer</a>
-				<a href = "transaction.html"><i class="fa-solid fa-money-check-dollar"></i>Transactions</a>
-				<a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
-				<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+					<a href="home.html"><i class="fa-solid fa-house-user"></i><u>Home</u></a>
+					<a href="transfer.html"><i class="fa-solid fa-money-bill-transfer"></i>Transfer</a>
+					<a href = "transaction.html"><i class="fa-solid fa-money-check-dollar"></i>Transactions</a>
+					<a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
+					<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+					<object width="300px" height="70px" type="text/html" data="./user_data/username.txt" style ="padding: 12px"></object>
 			</div>
 		</nav>
 		<div class="content">
 			<h2>Home Page</h2>
 			<div>
-				<h2> Welcome, </h2><label id="username"></label>
+				<h3> Welcome Back, <h3 id="username"></h3></h3>
 			</div>
 		</div>
-        <link href="bankstyle.css" rel="stylesheet" type= "text/css">
+        <link href="./style/bankstyle.css" rel="stylesheet" type= "text/css">
         <div class= "ContainUserData">
 			<div class="flex">
 				<div class="element-center">
 					
-					<div id="acctBalance"> <span class="wrap"></span>
-						</a>
-							<center><h1> Balance  </h1> <label id="acctBalanceLbl"></label></center>
-					</div>
+					<form name= "userbalance" action= "/bal" method="POST">
+						<div id="acctBalance"> <span class="wrap"></span>
+							</a>
+								<center><h1> Balance  </h1> <label id="acctBalanceLbl"></label></center>
+						</div>
 
-					<div id="inputs">
-					<h2> Deposit </h2> <input type="text" id="userDeposit" required>
-						<button id="btnDeposit">Deposit</button>
+						<div id="inputs">
+						<h2> Deposit </h2> <input type="text" id="userDeposit" required>
+							<button id="btnDeposit">Deposit</button>
 
-					<h2> Withdraw </h2> <input type="text" id="userWithdraw" required>
-						<button id="btnWithdraw">Withdraw</button>
-					</div>
-		
+						<h2> Withdraw </h2> <input type="text" id="userWithdraw" required>
+							<button id="btnWithdraw">Withdraw</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
+			<script>
+				fetch("./user_data/user.json")
+					.then(response => response.json())
+					.then(data => {
+						document.querySelector('#username').innerHTML = data.username;
+						//document.querySelector('#acctBalanceLbl').innerHTML=Number(data.balance);
+						//document.write(document.querySelector('#acctBalanceLbl').innerHTML);
+            })
+			</script>
 			<script type="text/javascript" src="./routes/userbanking.js"></script>
 			
-			<script>
-
-			const username = document.getElementById("username");
-
-			const fs = require('fs')
-			fs.readFile('username.txt', (err, inputD) => {
-			if (err) throw err;
-				username = inputD.toString()
-				console.log(inputD.toString());
-
-				document.getElementById("username").innerHTML = username;
-			})
-			</script>
+			
 </html>
