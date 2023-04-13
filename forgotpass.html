@@ -8,7 +8,7 @@
 <body>
     <nav class="navtop">
 	    <div>
-			<a href="/"><i class="fa-regular fa-user"></i>Log In</a>
+			<a href="index.html"><i class="fa-regular fa-user"></i>Log In</a>
             <a href="signup.html"><i class="fa-solid fa-user-plus"></i>Sign Up</a>
 		</div>
 
@@ -16,7 +16,7 @@
     <div class="login">
         <h1>Password Reset</h1>
             <center><p><b>Please fill in this form to receive new password.</b></p></center>
-        <form action="./routes/resetpassword.js" onsubmit = "return validation()" method="post">
+        <form action="/forgotpass" method="post">
             
             <label for="username"><i class="fas fa-user"></i></label>
             <input type="text" placeholder="Email" name="username" id="username"required>

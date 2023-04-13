@@ -1,3 +1,8 @@
+fs.readFile('balance.txt', function (err, data) {
+    balance = data.toString();
+ });
+ console.log(balance);
+
 const acctBalanceLbl = document.getElementById("balance");
 const deposits = [];
 const withdrawals = [];

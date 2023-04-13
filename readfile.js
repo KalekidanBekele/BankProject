@@ -1,4 +1,16 @@
-var txtFile = "username.txt"
+const username = document.getElementById("username");
+
+const fs = require('fs')
+fs.readFile('username.txt', (err, inputD) => {
+   if (err) throw err;
+	username = inputD.toString()
+    console.log(inputD.toString());
+
+	document.getElementById("username").innerHTML = username;
+})
+
+
+/*var txtFile = "username.txt"
 var file = new File(txtFile);
 
 file.open("r"); // open file with read access
@@ -20,7 +32,7 @@ function readTextFile(filepath) {
 	}
 	return str;
 }
-/*var upload = document.getElementById('username');
+var upload = document.getElementById('username');
 // File reader to read the file 
 var reader = new FileReader();
  // Parse the result into an object

@@ -15,13 +15,13 @@
 				<a href="transfer.html"><i class="fa-solid fa-money-bill-transfer"></i>Transfer</a>
 				<a href = "transaction.html"><i class="fa-solid fa-money-check-dollar"></i>Transactions</a>
 				<a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
-				<a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				<a href="index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
 		<div class="content">
 			<h2>Home Page</h2>
 			<div>
-				<h2> <object data="username.txt"></object></h2>
+				<h2> Welcome, </h2><label id="username"></label>
 			</div>
 		</div>
         <link href="bankstyle.css" rel="stylesheet" type= "text/css">
@@ -46,4 +46,18 @@
 			</div>
 		</div>
 			<script type="text/javascript" src="./routes/userbanking.js"></script>
+			
+			<script>
+
+			const username = document.getElementById("username");
+
+			const fs = require('fs')
+			fs.readFile('username.txt', (err, inputD) => {
+			if (err) throw err;
+				username = inputD.toString()
+				console.log(inputD.toString());
+
+				document.getElementById("username").innerHTML = username;
+			})
+			</script>
 </html>
