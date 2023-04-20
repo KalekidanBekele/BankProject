@@ -13,11 +13,12 @@ ul {
 
 input[type=text], input[type=password] {
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+    padding: 12px;
+    margin: 5px 0 18px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
+    display: flex;
   }
   button {
     background-color: #cd8810;
@@ -122,10 +123,9 @@ body {
 
 .navtop {
 	background-color: #121212;
-	height: 60px;
+	height: 73px;
 	width: 100%;
 	top: 0;
-	position: fixed;
 	overflow: hidden;
 	/* padding: -20px; */
 }
@@ -150,14 +150,14 @@ body {
 	padding-left: 46px;
 }
 .navtop div a {
-	padding: 17px;
+	padding: 26px;
 	text-decoration: none;
 	color: #c1c4c8;
 	font-weight: bold;
 	padding-right: 50px;
-  text-align: center;
-  float: left;
-  display: block;
+	text-align: center;
+	float: left;
+	display: block;
 }
 .navtop div a:hover {
   opacity: .76;
@@ -191,8 +191,8 @@ body.loggedin {
 }
 .content h2 {
 	margin: 11px;
-	padding: 58px 29px;
-	font-size: 20px;
+	padding: 28px 29px;
+	font-size: 28px;
 	border-bottom: 0px solid #e0e0e3;
 	color: #121212;
 }

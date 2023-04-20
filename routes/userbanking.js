@@ -1,7 +1,16 @@
+var bal;
+fetch("./user_data/user.json")
+.then(response => response.json())
+	.then(data => {
+	bal=parseFloat(data.balance).toFixed(2);
+});
+
+
+
 const acctBalanceLbl = document.getElementById("balance");
 const deposits = [];
 const withdrawals = [];
-let totalBalance = 250;
+let totalBalance = bal;
 console.log(totalBalance);
 const userDeposit = document.getElementById("userDeposit");
 const btnDeposit = document.getElementById("btnDeposit");

@@ -52,10 +52,11 @@
 					.then(response => response.json())
 					.then(data => {
 						document.querySelector('#username').innerHTML = data.username;
-						//document.querySelector('#acctBalanceLbl').innerHTML=Number(data.balance);
+						//document.querySelector('#acctBalanceLbl').innerHTML=parseFloat(data.balance).toFixed(2);
 						//document.write(document.querySelector('#acctBalanceLbl').innerHTML);
             })
 			</script>
+			<script type="text/javascript" src="./user_data/user.json"></script>
 			<script type="text/javascript" src="./routes/userbanking.js"></script>
 			
 			
